@@ -12,15 +12,15 @@ export default class Task {
 
     get Template() {
         return /*html*/ `
-        <div class="col-4 border rounded shadow-sm" id="${this.color.toLowerCase()}">
+        <div class="col-6 border rounded shadow-sm" id="${this.color.toLowerCase()}">
         <h2>${this.title}
             <button class="text-danger btn" onclick="app.tasksController.deleteTaskForm('${this.id}')"><span
-                    class="text-end">&times;</span></button>
+                    class="close text-danger m-auto">&times;</span></button>
                     </h2>
             <form class="form-group" onsubmit="app.subTasksController.createSubTask(event, '${this.id}')">
-                <label for="tasksToAdd">Tasks to add:</label>
-                <input type="text" class="form-control" name="title" placeholder="Tasks Please :P">
-                <button class="btn btn-success" type="submit">Submit</button>
+                <label for="tasksToAdd" class="strong">Tasks to add:</label>
+                <input type="text" class="form-control" name="title" placeholder="Tasks Please :P" minlength="3" maxlength="50" >
+                <button class="btn btn-success mt-2" type="submit">Submit</button>
                 </form>
                 
                 <div class="row">

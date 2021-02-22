@@ -10,6 +10,9 @@ export default class SubTasksController {
         event.preventDefault()
         console.log('creating sub task');
         let form = event.target
+        if (form.title.value.length == 0) {
+            return window.alert("Must have a valid input of at least 3 characters")
+        }
         let rawSubTask = {
             title: form.title.value,
             taskId: taskId

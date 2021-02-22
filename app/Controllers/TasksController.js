@@ -20,6 +20,10 @@ export default class TasksController {
 
         event.preventDefault()
         let form = event.target
+        debugger
+        if (form.title.value.length == 0) {
+            return window.alert("Must have a valid input of at least 3 characters")
+        }
         switch (form.color.value.toLowerCase()) {
             case "purple":
             case "yellow":
