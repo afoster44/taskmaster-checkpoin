@@ -21,6 +21,7 @@ export default class SubTasksController {
     }
 
     deleteSubTasks(subTaskId) {
+        window.confirm('Are you sure you want to delete this?')
         subTasksService.deleteSubTask(subTaskId)
     }
 }
